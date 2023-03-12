@@ -1,0 +1,88 @@
+<div class=" container">
+
+    <div class="row mb-2" *ngIf="!addPage">
+        <button (click)="adaugaPage()">Adauga client</button>
+    </div>
+
+    <div class="row" *ngIf="!addPage">
+        <div class="clienti-table col-12" *ngIf="sharedInfo.clienti != null && sharedInfo.clienti.length > 0">
+            <table>
+                <tr>
+                    <th class="table-header-clienti">Identificator Client</th>
+                    <th class="table-header-clienti">Nume</th>
+                    <th class="table-header-clienti">Prenume</th>
+                    <th class="table-header-clienti">Data Inscrierii</th>
+                    <th class="table-header-clienti">Sterge / Modifica</th>
+                </tr>
+                <tr *ngFor="let cli of sharedInfo.clienti">
+                    <th class="table-row-clienti">{{cli.identificatorClient}}</th>
+                    <th class="table-row-clienti">{{cli.nume}}</th>
+                    <th class="table-row-clienti">{{cli.prenume}}</th>
+                    <th class="table-row-clienti">{{cli.dataInscrierii | date:'dd/MM/yyyy'}}</th>
+                    <th class="table-row-clienti"><button (click)="stergeClient(cli)">Sterge</button>
+                                                   <button (click)="modifica(cli)">Modifica</button></th>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="row" *ngIf="addPage">
+        <div class="col-12">
+
+
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Identificator Client :
+                </div>
+                <div class="col-8">
+                    <input type="text" [(ngModel)]="selectedIdentificator" />
+                </div>
+            </div>
+
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Nume :
+                </div>
+                <div class="col-8">
+                    <input type="text" [(ngModel)]="selectedNume" />
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Prenume :
+                </div>
+                <div class="col-8">
+                    <input type="text" [(ngModel)]="selectedPrenume" />
+                </div>
+            </div>
+      
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Data angajarii :
+                </div>
+                <div class="col-8">
+                    <input type="date" [(ngModel)]="selectedDataInscrierii" />
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+
+                </div>
+                <div class="col-8" *ngIf="!isModifica">
+                    <button (click)="adaugaClient()">Adauga clientul</button>
+                </div>
+                <div class="col-8" *ngIf="isModifica">
+                    <button (click)="modificaClient()">Modifica clientul</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

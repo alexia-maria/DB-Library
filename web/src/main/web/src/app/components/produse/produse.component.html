@@ -1,0 +1,95 @@
+<div class=" container">
+
+    <div class="row mb-2" *ngIf="!addPage">
+        <button (click)="adaugaPage()">Adauga produse </button>
+    </div>
+
+    <div class="row" *ngIf="!addPage">
+        <div class="produse-table col-12" *ngIf="sharedInfo.produse != null && sharedInfo.produse.length > 0">
+            <table>
+                <tr>
+                    <th class="table-header">Nume Furnizor</th>
+                    <th class="table-header">Pret</th>
+                    <th class="table-header">Denumire</th>
+                    <th class="table-header">Tip</th>
+
+                    <th class="table-header">Sterge /Modifica</th>
+                </tr>
+                <tr *ngFor="let pr of sharedInfo.produse">
+                    <th class="table-row">{{pr.furnizori !=null? pr.furnizori.numeFurnizor :'N/A'}}</th>
+                    <th class="table-row">{{pr.pret}}</th>
+                    <th class="table-row">{{pr.denumireProdus}}</th>
+                    <th class="table-row">{{pr.tipProdus}}</th>
+                    <th class="table-row">
+                        <button (click)="stergeProdus(pr)">Sterge</button> &nbsp;
+                        <button (click)="modifica(pr)">Modifica</button>
+                    </th>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="row" *ngIf="addPage">
+        <div class="col-12">
+
+
+            <div class="row mt-2">
+                <div class="col-4">Alege furnizor :</div>
+                <div class="col-8">
+                    <select [(ngModel)]="selectedFurnizor" name="furnizori" id="furnizori">
+                        <option *ngFor="let fur of sharedInfo.furnizori" [ngValue]="fur">{{fur.numeFurnizor }}</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Pret :
+                </div>
+                <div class="col-8">
+                    <input type="number" [(ngModel)]="selectedPret" />
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Denumire :
+                </div>
+                <div class="col-8">
+                    <input type="text" [(ngModel)]="selectedDenumire" />
+                </div>
+            </div>
+
+
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Tip :
+                </div>
+                <div class="col-8">
+                    <input type="text" [(ngModel)]="selectedTip" />
+                </div>
+            </div>
+
+
+
+
+            <div class="row mt-2">
+                <div class="col-4">
+
+                </div>
+                <div class="col-8" *ngIf="!isModifica">
+                    <button (click)="adaugaPr()">Adauga produs</button>
+                </div>
+                <div class="col-8" *ngIf="isModifica">
+                    <button (click)="modificaPr()">Modifica produs</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

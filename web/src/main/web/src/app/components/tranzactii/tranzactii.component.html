@@ -1,0 +1,82 @@
+<div class=" container">
+
+    <div class="row mb-2" *ngIf="!addPage">
+        <button (click)="adaugaPage()">Adauga tranzactii</button>
+    </div>
+
+    <div class="row" *ngIf="!addPage">
+        <div class="tranzactii-table col-12" *ngIf="sharedInfo.tranzactii != null && sharedInfo.tranzactii.length > 0">
+            <table>
+                <tr>
+                    <th class="table-header">Client</th>
+                    <th class="table-header">Angajat</th>
+                    <th class="table-header">Data Tranzactiei</th>
+
+                    <th class="table-header">Sterge /Modifica</th>
+                </tr>
+                <tr *ngFor="let tr of sharedInfo.tranzactii">
+                    <th class="table-row">{{tr.clienti !=null? tr.clienti.nume+ ' ' + tr.clienti.prenume :'N/A'}}</th>
+                    <th class="table-row">{{tr.angajati !=null? tr.angajati.nume + ' ' +tr.angajati.prenume : 'N/A'}}</th>
+                    <th class="table-row">{{tr.dataTranzactiei | date:'dd/MM/yyyy'}}</th>
+                    <th class="table-row">
+                        <button (click)="stergeTranzactie(tr)">Sterge</button> &nbsp;
+                        <button (click)="modifica(tr)">Modifica</button>
+                    </th>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="row" *ngIf="addPage">
+        <div class="col-12">
+
+
+            <div class="row mt-2">
+                <div class="col-4">Alege client :</div>
+                <div class="col-8">
+                    <select [(ngModel)]="selectedClient" name="clienti" id="clienti">
+                        <option *ngFor="let cl of sharedInfo.clienti" [ngValue]="cl">{{cl.nume +" "+cl.prenume}}</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class="row mt-2">
+                <div class="col-4">Alege angajat  :</div>
+                <div class="col-8">
+                    <select [(ngModel)]="selectedAngajat" name="angajati" id="angajati">
+                        <option *ngFor="let ang of sharedInfo.angajati" [ngValue]="ang">{{ang.nume + ' ' + ang.prenume}}</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Data tranzactiei :
+                </div>
+                <div class="col-8">
+                    <input type="date" [(ngModel)]="selectedDataTranzactiei" />
+                </div>
+            </div>
+
+
+
+            <div class="row mt-2">
+                <div class="col-4">
+
+                </div>
+                <div class="col-8" *ngIf="!isModifica">
+                    <button (click)="adaugaTr()">Adauga tranzactie</button>
+                </div>
+                <div class="col-8" *ngIf="isModifica">
+                    <button (click)="modificaTr()">Modifica tranzactie</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

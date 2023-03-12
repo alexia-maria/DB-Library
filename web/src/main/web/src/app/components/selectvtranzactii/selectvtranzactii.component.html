@@ -1,0 +1,24 @@
+
+<div class="row"tranzactiiView>
+    <div class="vtrabzactii-table col-12" *ngIf="sharedInfo.tranzactiiView != null && sharedInfo.tranzactiiView.length > 0">
+        <table>
+            <tr>
+                <th class="table-header">Id angajat</th>
+                <th class="table-header">Nume angajat</th>
+                <th class="table-header">Prenume angajat</th>
+                <th class="table-header">Id tranzactie</th>
+                <th class="table-header">Id client</th>
+                <th class="table-header">Data tranzactiei</th>
+                <th class="table-header">Total</th>
+                <th class="table-header">Nume Client</th>
+                <th class="table-header">Prenume Client</th>
+
+            </tr>
+            <tr *ngFor="let t1 of sharedInfo.tranzactiiView">
+                <th class="table-row" *ngFor="let t2 of t1">{{t2}}</th>
+            </tr>
+        </table>
+
+    </div>
+</div>
+

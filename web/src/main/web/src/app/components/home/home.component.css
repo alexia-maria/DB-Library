@@ -1,3 +1,87 @@
-.home-container{
-  min-height:  900px;
+* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+/*    width: 14.28%;
+*/
+    width:11.11%;
+
+}
+
+    .tablink:hover {
+        background-color: #777;
+    }
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+    width:100%;
+}
+
+#Angajati {
+    background-color: red;
+}
+
+
+#Clienti {
+    background-color: red;
+}
+
+#Departamente {
+    background-color: red;
+}
+
+
+#DetaliiTranzactii {
+    background-color: red;
+}
+
+#Furnizori {
+    background-color: red;
+}
+
+
+#Locatii {
+    background-color: red;
+}
+
+
+#Tranzactii {
+    background-color: red;
+}
+#Produse {
+    background-color: red;
+}
+#PctC{
+    background-color: red;
+}
+
+#PctD {
+    background-color: red;
+}
+
+
+#SelectVTranzactii {
+    background-color: red;
+}
+
+
+#SelectVFurnizori {
+    background-color: red;
 }

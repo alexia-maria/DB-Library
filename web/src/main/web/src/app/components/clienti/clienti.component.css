@@ -1,0 +1,21 @@
+.clienti-table {
+    text-align: center;
+    width: 100%;
+}
+
+.table-header-clienti {
+    border: 1px solid black;
+    font-weight: bold;
+    width: 20%
+}
+
+
+.table-row-clienti {
+    border: 1px solid black;
+    font-weight: bold;
+    width: 20%
+}
+
+.container{
+    width:100%
+}

@@ -1,0 +1,17 @@
+.produse-table {
+    text-align: center;
+    width: 100%;
+}
+
+.table-header {
+    border: 1px solid black;
+    font-weight: bold;
+    width: 12.5%
+}
+
+
+.table-row {
+    border: 1px solid black;
+    font-weight: bold;
+    width: 12.5%
+}

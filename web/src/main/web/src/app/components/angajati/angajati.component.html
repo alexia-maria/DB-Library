@@ -1,0 +1,120 @@
+<div class=" container">
+       
+    <div class="row mb-2" *ngIf="!addPage">
+        <button (click) ="adaugaPage()">Adauga angajat</button>
+    </div>
+    <div class="row" *ngIf="!addPage">
+        <div class="angajati-table col-12" *ngIf="sharedInfo.angajati != null && sharedInfo.angajati.length > 0">
+            <table>
+                <tr>
+                    <th class="table-header">Locatie</th>
+                    <th class="table-header">Departament</th>
+                    <th class="table-header">Functie</th>
+                    <th class="table-header">Nume</th>
+                    <th class="table-header">Prenume</th>
+                    <th class="table-header">Salariu</th>
+                    <th class="table-header">DataAngajarii</th>
+                    <th class="table-header">Sterge /Modifica</th>
+                </tr>
+                <tr *ngFor="let ang of sharedInfo.angajati">
+                    <th class="table-row">{{ang.locatie !=null? ang.locatie.denumireLocatie :'N/A'}}</th>
+                    <th class="table-row">{{ang.departament !=null? ang.departament.denumireDepartament : 'N/A'}}</th>
+                    <th class="table-row">{{ang.functie}}</th>
+                    <th class="table-row">{{ang.nume}}</th>
+                    <th class="table-row">{{ang.prenume}}</th>
+                    <th class="table-row">{{ang.salariu}}</th>
+                    <th class="table-row">{{ang.dataAngajarii | date:'dd/MM/yyyy'}}</th>
+                    <th class="table-row"><button (click)="stergeAngajat(ang)">Sterge</button> &nbsp;
+                                           <button (click)="modifica(ang)">Modifica</button></th>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="row"  *ngIf="addPage">
+        <div class="col-12">
+
+        
+            <div class="row mt-2">
+                <div class="col-4">Alege Locatie :</div>
+                <div class="col-8">
+                    <select [(ngModel)]="selectedLocatie" name="locatii" id="locatiiSelect">
+                        <option *ngFor="let loc of sharedInfo.locatii" [ngValue]="loc">{{loc.denumireLocatie}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">Alege Departamentul :</div>
+                <div class="col-8">
+                    <select [(ngModel)]="selectedDepartament" name="departamente" id="departamenteSelect">
+                        <option *ngFor="let dep of sharedInfo.departamente" [ngValue]="dep">{{dep.denumireDepartament}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Functie :
+                </div>
+                <div class="col-8">
+                    <input type="text" [(ngModel)]="selectedFunctie" />
+                </div>
+            </div>
+
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Nume :
+                </div>
+                <div class="col-8">
+                    <input type="text" [(ngModel)]="selectedNume" />
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Prenume :
+                </div>
+                <div class="col-8">
+                    <input type="text" [(ngModel)]="selectedPrenume" />
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Salariu :
+                </div>
+                <div class="col-8">
+                    <input type="number" [(ngModel)]="selectedSalariu" />
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Data angajarii :
+                </div>
+                <div class="col-8">
+                    <input type="date" [(ngModel)]="selectedDataAngajarii" />
+                </div>
+            </div>
+
+
+
+            <div class="row mt-2">
+                <div class="col-4">
+
+                </div>
+                <div class="col-8" *ngIf="!isModifica">
+                    <button (click)="adaugaAngajatul()">Adauga angajatul</button>
+                </div>
+                <div class="col-8" *ngIf="isModifica">
+                    <button (click)="modificaAngajatul()">Modifica angajatul</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

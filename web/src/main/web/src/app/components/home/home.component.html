@@ -1,1 +1,64 @@
-<div class="home-container"></div>
+<button class="tablink" (click)="openPage('Angajati', this, 'red')" id="defaultOpen">Angajati</button>
+<button class="tablink" (click)="openPage('Clienti', this, 'green')">Clienti</button>
+<button class="tablink" (click)="openPage('DetaliiTranzactii', this, 'orange')">Detalii Tranzactii</button>
+<button class="tablink" (click)="openPage('Tranzactii', this, 'orange')">Tranzactii</button>
+<button class="tablink" (click)="openPage('Produse', this, 'orange')">Produse</button>
+<button class="tablink" (click)="openPage('PctC', this, 'green')">PctC</button>
+<button class="tablink" (click)="openPage('PctD', this, 'green')">PctD</button>
+<button class="tablink" (click)="openPage('SelectVTranzactii', this, 'green')">SelectVTranzactii</button>
+<button class="tablink" (click)="openPage('SelectVFurnizori', this, 'green')">SelectVFurnizori</button>
+
+
+<!--
+<button class="tablink"  (click)="openPage('Departamente', this, 'blue')">Departamente</button>
+<button class="tablink"  (click)="openPage('Furnizori', this, 'orange')">Furnizori</button>
+<button class="tablink"  (click)="openPage('Locatii', this, 'orange')">Locatii</button>
+    -->
+
+<div id="Angajati" class="tabcontent">
+    <app-angajati></app-angajati>
+</div>
+<div id="Clienti" class="tabcontent">
+    <app-clienti></app-clienti>
+</div>
+
+<div id="PctC" class="tabcontent">
+    <app-pctc></app-pctc>
+</div>
+
+<div id="PctD" class="tabcontent">
+    <app-pctd></app-pctd>
+</div>
+
+<div id="SelectVTranzactii" class="tabcontent">
+    <app-selectvtranzactii></app-selectvtranzactii>
+</div>
+
+<div id="SelectVFurnizori" class="tabcontent">
+    <app-selectvfurnizori></app-selectvfurnizori>
+</div>
+
+<div id="DetaliiTranzactii" class="tabcontent">
+    <app-detalii-tranzactii></app-detalii-tranzactii>
+</div>
+
+<div id="Tranzactii" class="tabcontent">
+    <app-tranzactii></app-tranzactii>
+</div>
+
+<div id="Produse" class="tabcontent">
+    <app-produse></app-produse>
+</div>
+
+<!--
+<div id="Departamente" class="tabcontent">
+    <app-departamente></app-departamente>
+</div>
+
+<div id="Furnizori" class="tabcontent">
+    <app-furnizori></app-furnizori>
+</div>
+<div id="Locatii" class="tabcontent">
+    <app-locatii></app-locatii>
+</div>
+>-->

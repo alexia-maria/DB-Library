@@ -1,0 +1,92 @@
+<div class=" container">
+
+    <div class="row mb-2" *ngIf="!addPage">
+        <button (click)="adaugaPage()">Adauga detalii tranz</button>
+    </div>
+
+    <div class="row" *ngIf="!addPage">
+        <div class="detalii-tranzactii-table col-12" *ngIf="sharedInfo.detaliiTranzactii != null && sharedInfo.detaliiTranzactii.length > 0">
+            <table>
+                <tr>
+                    <th class="table-header">id Tranzactie</th>
+                    <th class="table-header">Produs</th>
+                    <th class="table-header">Cantitate</th>
+                    <th class="table-header">pret</th>
+
+                    <th class="table-header">Sterge /Modifica</th>
+                </tr>
+                <tr *ngFor="let dt of sharedInfo.detaliiTranzactii">
+                    <th class="table-row">{{dt.tranzactii !=null? dt.tranzactii.idTranzactie :'N/A'}}</th>
+                    <th class="table-row">{{dt.produse !=null? dt.produse.denumireProdus : 'N/A'}}</th>
+                    <th class="table-row">{{dt.cantitate}}</th>
+                    <th class="table-row">{{dt.pret}}</th>
+                    <th class="table-row">
+                        <button (click)="stergeDetaliiTranzactii(dt)">Sterge</button> &nbsp;
+                        <button (click)="modifica(dt)">Modifica</button>
+                    </th>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="row" *ngIf="addPage">
+        <div class="col-12">
+
+
+            <div class="row mt-2">
+                <div class="col-4">Alege Id Tranzactie :</div>
+                <div class="col-8">
+                    <select [(ngModel)]="selectedTranzactie" name="tranzactii" id="tranzactii">
+                        <option *ngFor="let tra of sharedInfo.tranzactii" [ngValue]="tra">{{tra.idTranzactie}}</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class="row mt-2">
+                <div class="col-4">Alege PRodus  :</div>
+                <div class="col-8">
+                    <select [(ngModel)]="selectedProdus" name="produse" id="produse">
+                        <option *ngFor="let pro of sharedInfo.produse" [ngValue]="pro">{{pro.denumireProdus}}</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Cantitate :
+                </div>
+                <div class="col-8">
+                    <input type="number" [(ngModel)]="selectedCantitate" />
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    Pret :
+                </div>
+                <div class="col-8">
+                    <input type="number" [(ngModel)]="selectedPret" />
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-4">
+
+                </div>
+                <div class="col-8" *ngIf="!isModifica">
+                    <button (click)="adaugaDT()">Adauga dt</button>
+                </div>
+                <div class="col-8" *ngIf="isModifica">
+                    <button (click)="modificaDT()">Modifica dt</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
