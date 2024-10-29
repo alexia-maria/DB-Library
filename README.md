@@ -1,4 +1,3 @@
-# spring-boot-angular6-maven-project
-Build and package spring boot and angular6 into a deployable war file
+# Database Library
 
-The corresponding article can be found at https://techshard.com/2018/08/12/building-a-web-app-using-spring-boot-angular-6-and-maven/ and https://dzone.com/articles/building-a-web-app-using-spring-boot-angular-6-and
+This project is a collaborative effort between myself and my friend, focused on developing a robust database solution. I designed the database architecture, including the tables, relationships, and business rules, ensuring optimal performance and data integrity. My friend implemented the web application that interacts seamlessly with the database, creating a user-friendly interface for data management
