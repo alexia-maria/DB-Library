@@ -1,6 +1,6 @@
 # Overview
 
-This project focuses on efficiently handling bookstore information, ensuring accurate data management and historical record tracking.
+  This project focuses on efficiently handling bookstore information, ensuring accurate data management and historical record tracking.
 
 # Features
 
@@ -12,7 +12,7 @@ Database Design & Implementation:
 
 # Full-Stack Integration:
 
-  ● Connected the database to an Angular frontend and Spring Boot backend for seamless interaction.
+  Connected the database to an Angular frontend and Spring Boot backend for seamless interaction.
 
 # Technologies
 
